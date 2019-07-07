@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+#name {
+  background: lightgrey;
+  height: 50px;
+  border: darkgray 1px solid;
+  margin-bottom: 20px;
+}
+
+#story {
+  background: lightgrey;
+  border: darkgray 1px solid;
+  margin-bottom: 20px;
+}
+
+#button-container {
+  width: 75%;
+  align-self: center;
+}
+
+.submit {
+  width: 100%;
+  background: white;
+  height: 50px;
+  margin-bottom: 10px;
+  border: darkgray 1px solid;
+}
+
+.submit:last-child {
+  margin-bottom: 20px;
+}
+
+#signatures {
+  background: lightgray;
+  height: 300px;
+  border: darkgray 1px solid;
+}
+
+#signatures ul {
+  margin: 10px 10px;
+  list-style: none;
+}
+
+#signatures ul li span {
+  
+  font-weight: 600;
+}

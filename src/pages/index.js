@@ -1,20 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+
+import "./index.css";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="container">
+      <input type="text" id="name" name="name" required
+          minlength="4" maxlength="8" size="10" placeholder="Tu firma :)"></input>
+      <textarea id="story" name="story" rows="5" cols="33" placeholder="Tu mensaje">
+      </textarea>
+      <div id="button-container">
+        <button class="submit" type="button">
+          POST por GRAPHQL
+        </button>
+        <button class="submit" type="button">
+          POST por JSON:API
+        </button>
+        <button class="submit" type="button">
+          POST por REST API
+        </button>
+      </div>
+      <div id="signatures">
+        <ul>
+          <li><span>Nombre: </span> Drupal</li>
+          <li><span>Nombre: </span> Camp</li>
+          <li><span>Nombre: </span> Costa Rica 2019</li>
+        </ul>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
