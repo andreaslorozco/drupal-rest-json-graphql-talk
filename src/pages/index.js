@@ -118,30 +118,83 @@ class IndexPage extends Component {
   }
 
   handleSubmitJsonApi = async () => {
-    const data = await fetch(
-      "https://dev-dc2019-rest-jsonapi-graphql.pantheonsite.io/jsonapi/node/signature",
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/vnd.api+json",
-          "Content-Type": "application/vnd.api+json",
-          Authorization:
-            "Basic RHVtbXlBY2NvdW50OjRyWVFiaVhTTmtaM0NudkdhSkZSNnBibg==",
-        },
-        body: JSON.stringify({
-          data: {
-            type: "node--signature",
-            attributes: {
-              title: `${this.state.name}`,
-              field_message: `${this.state.message}`,
-              field_posted_through: "JSON API",
-            },
+    try {
+      const data = await fetch(
+        "https://dev-dc2019-rest-jsonapi-graphql.pantheonsite.io/jsonapi/node/signature",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/vnd.api+json",
+            "Content-Type": "application/vnd.api+json",
+            Authorization:
+              "Basic RHVtbXlBY2NvdW50OjRyWVFiaVhTTmtaM0NudkdhSkZSNnBibg==",
           },
-        }),
-      }
-    )
-    const response = await data.json()
-    console.log(response)
+          body: JSON.stringify({
+            data: {
+              type: "node--signature",
+              attributes: {
+                title: `${this.state.name}`,
+                field_message: `${this.state.message}`,
+                field_posted_through: "JSON API",
+              },
+            },
+          }),
+        }
+      )
+      await data.json()
+      this.setState(
+        {
+          message: "",
+        },
+        this.loadMessages
+      )
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  handleSubmitGraphQl = async () => {
+    const query = JSON.stringify({
+      query: `
+        mutation {
+          createSignature(input: {title: "${this.state.name}" field_message: "${this.state.message}" field_posted_through: "Graph QL!"}) {
+            entity {
+              entityId
+            }
+            errors
+            violations {
+              path
+              message
+            }
+          }
+        }
+      `,
+    })
+
+    try {
+      const data = await fetch(
+        "https://dev-dc2019-rest-jsonapi-graphql.pantheonsite.io/graphql",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Basic RHVtbXlBY2NvdW50OjRyWVFiaVhTTmtaM0NudkdhSkZSNnBibg==",
+          },
+          body: query,
+        }
+      )
+      const response = await data.json()
+      console.log(response)
+      this.setState(
+        {
+          message: "",
+        },
+        this.loadMessages
+      )
+    } catch (error) {
+      console.error("error!!!", error)
+    }
   }
 
   render() {
@@ -170,7 +223,11 @@ class IndexPage extends Component {
             value={this.state.message}
           ></textarea>
           <div id="button-container">
-            <button className="submit" type="button">
+            <button
+              className="submit"
+              type="button"
+              onClick={this.handleSubmitGraphQl}
+            >
               POST por GRAPHQL
             </button>
             <button
