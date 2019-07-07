@@ -132,9 +132,9 @@ class IndexPage extends Component {
           data: {
             type: "node--signature",
             attributes: {
-              title: "test",
-              field_message: "Message!!",
-              field_posted_through: "JSON:API!",
+              title: `${this.state.name}`,
+              field_message: `${this.state.message}`,
+              field_posted_through: "JSON API",
             },
           },
         }),
