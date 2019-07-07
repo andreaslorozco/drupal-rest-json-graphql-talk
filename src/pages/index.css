@@ -47,7 +47,16 @@
   list-style: none;
 }
 
-#signatures ul li span {
-  
+#signatures ul li .sig-name {
   font-weight: 600;
+}
+
+#signatures ul li .posted-through {
+  color: darkgray;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#signatures ul li .posted-through span {
+  text-decoration: underline;
 }
