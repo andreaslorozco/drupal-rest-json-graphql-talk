@@ -9,6 +9,7 @@ class IndexPage extends Component {
     name: "",
     message: "",
     signatures: [],
+    dataLoaded: false,
   }
 
   componentDidMount = () => {
@@ -29,6 +30,7 @@ class IndexPage extends Component {
       const response = await data.json()
       this.setState({
         signatures: response,
+        dataLoaded: true,
       })
     } catch (error) {
       console.error(error)
@@ -158,6 +160,7 @@ class IndexPage extends Component {
             size="10"
             placeholder="Tu firma :)"
             onChange={this.handleNameChange}
+            className="form-field"
             value={this.state.name}
           ></input>
           <textarea
@@ -167,30 +170,33 @@ class IndexPage extends Component {
             cols="33"
             placeholder="Tu mensaje"
             onChange={this.handleMessageChange}
+            className="form-field"
             value={this.state.message}
           ></textarea>
           <div id="button-container">
-            <button className="submit" type="button">
+            <button className="submit button" type="button">
               POST por GRAPHQL
             </button>
             <button
-              className="submit"
+              className="submit button"
               type="button"
               onClick={this.handleSubmitJsonApi}
             >
               POST por JSON:API
             </button>
             <button
-              className="submit"
+              className="submit button"
               type="button"
               onClick={this.handleSubmitRestApi}
             >
               POST por REST API
             </button>
           </div>
-          <div id="signatures">
-            <ul>{this.renderSignatures()}</ul>
-          </div>
+          {this.state.dataLoaded ? (
+            <div id="signatures" className="form-field">
+              <ul>{this.renderSignatures()}</ul>
+            </div>
+          ) : null}
         </div>
       </Layout>
     )
