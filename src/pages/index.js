@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import GithubCorner from "react-github-corner"
 
 import Layout from "../components/layout"
 
@@ -212,6 +213,7 @@ class IndexPage extends Component {
     const disabled = this.isAnyFieldEmpty()
     return (
       <Layout>
+        <GithubCorner href="https://github.com/andreaslorozco/drupal-rest-json-graphql-talk" />
         <div className="container">
           <input
             type="text"
