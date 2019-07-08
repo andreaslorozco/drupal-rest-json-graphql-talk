@@ -232,25 +232,26 @@ class IndexPage extends Component {
               type="button"
               onClick={this.handleSubmitGraphQl}
             >
-              POST por GRAPHQL
+              Firma con GRAPHQL
             </button>
             <button
               className="submit button"
               type="button"
               onClick={this.handleSubmitJsonApi}
             >
-              POST por JSON:API
+              Firma con JSON:API
             </button>
             <button
               className="submit button"
               type="button"
               onClick={this.handleSubmitRestApi}
             >
-              POST por REST API
+              Firma con REST API
             </button>
           </div>
           {this.state.dataLoaded ? (
             <div id="signatures" className="form-field">
+              <h3 className="recent-title">Firmas recientes</h3>
               <ul>{this.renderSignatures()}</ul>
             </div>
           ) : null}
