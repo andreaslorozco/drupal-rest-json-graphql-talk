@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import GithubCorner from "react-github-corner"
+import GithubCorner from "react-github-corners"
+import "react-github-corners/dist/GithubCorner.css"
 
 import Layout from "../components/layout"
 
@@ -51,13 +52,30 @@ class IndexPage extends Component {
   }
 
   renderSignatures = () => {
+    let selectLink = api => {
+      switch (api) {
+        case "JSON API":
+          return "https://www.drupal.org/project/jsonapi"
+        case "REST API":
+          return "https://www.drupal.org/docs/8/api/restful-web-services-api/restful-web-services-api-overview"
+        case "GraphQL":
+          return "https://www.drupal.org/project/graphql"
+      }
+    }
     return this.state.signatures.map((signature, i) => {
       return (
         <li key={i}>
-          <span className="sig-name">{signature.by}: </span> {signature.message}{" "}
-          -{" "}
+          <span className="sig-message">{`${signature.message} `}</span>
+          <span className="sig-name">{`- ${signature.by}.`}</span>
           <span className="posted-through">
-            Posteado desde <span>{signature.posted_through}</span>
+            {" "}
+            Posteado desde{" "}
+            <span>
+              <a className="link" href={selectLink(signature.posted_through)}>
+                {signature.posted_through}
+              </a>
+              .
+            </span>
           </span>
         </li>
       )
@@ -213,7 +231,10 @@ class IndexPage extends Component {
     const disabled = this.isAnyFieldEmpty()
     return (
       <Layout>
-        <GithubCorner href="https://github.com/andreaslorozco/drupal-rest-json-graphql-talk" />
+        <GithubCorner
+          url="https://github.com/andreaslorozco/drupal-rest-json-graphql-talk"
+          backgroundColor="#0c75b8"
+        />
         <div className="container">
           <input
             type="text"

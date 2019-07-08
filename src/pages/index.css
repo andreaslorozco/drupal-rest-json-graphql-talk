@@ -26,18 +26,24 @@ body {
   list-style: none;
 }
 
+#signatures li {
+  padding: 10px 0;
+}
+
 #signatures ul li .sig-name {
-  font-weight: 600;
+  font-weight: 300;
+}
+
+#signatures ul li .sig-message {
+  font-style: italic;
+  font-size: 20px;
 }
 
 #signatures ul li .posted-through {
+  display: block;
   color: #868482;
   font-weight: 400;
   font-style: italic;
-}
-
-#signatures ul li .posted-through span {
-  text-decoration: underline;
 }
 
 .form-field {
@@ -77,4 +83,12 @@ body {
 
 .recent-title {
   text-align: center;
+}
+
+.link {
+  color: #0c75b8;
+}
+
+.link:visited {
+  color: #0e83cd;
 }
