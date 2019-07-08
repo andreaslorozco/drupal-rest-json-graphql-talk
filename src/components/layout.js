@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
         <footer
           style={{
             fontFamily: `sans-serif`,
+            fontSize: `16px`,
           }}
         >
           © {new Date().getFullYear()}, Built with

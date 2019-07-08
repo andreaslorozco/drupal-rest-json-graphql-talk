@@ -168,7 +168,7 @@ class IndexPage extends Component {
     const query = JSON.stringify({
       query: `
         mutation {
-          createSignature(input: {title: "${this.state.name}" field_message: "${this.state.message}" field_posted_through: "Graph QL!"}) {
+          createSignature(input: {title: "${this.state.name}" field_message: "${this.state.message}" field_posted_through: "GraphQL"}) {
             entity {
               entityId
             }
