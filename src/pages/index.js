@@ -234,6 +234,7 @@ class IndexPage extends Component {
         <GithubCorner
           url="https://github.com/andreaslorozco/drupal-rest-json-graphql-talk"
           backgroundColor="#0c75b8"
+          target="_blank"
         />
         <div className="container">
           <input
