@@ -1,0 +1,8 @@
+{
+    "name": "graphql_mutations",
+    "type": "drupal-module",
+    "description": "This enables certain mutations",
+    "keywords": [],
+    "homepage": "https://www.drupal.org/project/graphql-mutations",
+    "minimum-stability": "dev"
+}

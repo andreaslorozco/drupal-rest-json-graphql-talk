@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains graphql-mutations.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function graphql_mutations_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+      // Main module help for the graphql-mutations module.
+    case 'help.page.graphql-mutations':
+      $output = '';
+      $output .= '<h3>'    . t('About') . '</h3>';
+      $output .= '<p>'    . t('This enables certain mutations.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

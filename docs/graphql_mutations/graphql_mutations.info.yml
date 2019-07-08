@@ -1,0 +1,5 @@
+name: "GraphQL Mutations"
+type: module
+description: "This enables certain mutations"
+core: 8.x
+package: "Custom"
