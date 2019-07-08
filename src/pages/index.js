@@ -63,6 +63,14 @@ class IndexPage extends Component {
     })
   }
 
+  isAnyFieldEmpty = () => {
+    if (this.state.name.length === 0 || this.state.message.length === 0) {
+      console.log("a value is empty")
+      return true
+    }
+    return false
+  }
+
   handleSubmitRestApi = async () => {
     const body = {
       _links: {
@@ -107,7 +115,8 @@ class IndexPage extends Component {
           body: stringifiedBody,
         }
       )
-      await data.json()
+      const response = await data.json()
+      console.log(response)
       this.setState(
         {
           message: "",
@@ -200,6 +209,7 @@ class IndexPage extends Component {
   }
 
   render() {
+    const disabled = this.isAnyFieldEmpty()
     return (
       <Layout>
         <div className="container">
@@ -225,12 +235,14 @@ class IndexPage extends Component {
             onChange={this.handleMessageChange}
             className="form-field"
             value={this.state.message}
+            required
           ></textarea>
           <div id="button-container">
             <button
               className="submit button"
               type="button"
               onClick={this.handleSubmitGraphQl}
+              disabled={disabled}
             >
               POST por GRAPHQL
             </button>
@@ -238,6 +250,7 @@ class IndexPage extends Component {
               className="submit button"
               type="button"
               onClick={this.handleSubmitJsonApi}
+              disabled={disabled}
             >
               POST por JSON:API
             </button>
@@ -245,6 +258,7 @@ class IndexPage extends Component {
               className="submit button"
               type="button"
               onClick={this.handleSubmitRestApi}
+              disabled={disabled}
             >
               POST por REST API
             </button>
