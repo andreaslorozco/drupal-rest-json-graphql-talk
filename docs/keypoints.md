@@ -43,4 +43,4 @@ Hacer un Guestbook para el camp.
 
 - https://www.amazeelabs.com/en/journal/graphql-drupalers-part-1-basics
 - https://dri.es/headless-cms-rest-vs-jsonapi-vs-graphql
-- https://www.drupal.org/docs/8/modules/jsonapi/jsonapi-vs-cores-rest-moduleç
+- https://www.drupal.org/docs/8/modules/jsonapi/jsonapi-vs-cores-rest-module
