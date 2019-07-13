@@ -18,7 +18,7 @@
 
 - We made another repo to host [the talk](https://github.com/EdgarBarrantes/drupal-rest-json-graphql-talk-slides).
 
-### Links
+## Links
 
 - [Talk](https://dccr19-deck.netlify.com/)
 - [App](https://dccr19-gb.netlify.com/)
