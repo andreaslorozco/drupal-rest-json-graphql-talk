@@ -4,8 +4,21 @@
 - [Documentación](https://github.com/andreaslorozco/drupal-rest-json-graphql-talk/blob/master/docs/keypoints.md) sobre [una charla](https://www.drupalcamp.cr/index.php/en/sessions/rest-graphql-o-jsonapi-que-no-hacer) del Drupal Camp Costa Rica 2019.
 - Un módulo custom que permite una mutación de GraphQL.
 
+### Notas: 
+
+- Hicimos un repositorio aparte para [la charla](https://github.com/EdgarBarrantes/drupal-rest-json-graphql-talk-slides)
+
 ## This repository hosts:
 
 - [A website](https://dccr19-guestbook.netlify.com/) that exemplifies how to use GraphQL, REST API, y JSON:API in order to interact with Drupal 8 from a javascript based frontend [(gatsby)](https://www.gatsbyjs.org/).
 - [Documentation](https://github.com/andreaslorozco/drupal-rest-json-graphql-talk/blob/master/docs/keypoints.md) about [a talk](https://www.drupalcamp.cr/index.php/en/sessions/rest-graphql-o-jsonapi-que-no-hacer) of the 2019's Drupal Camp Costa Rica.
 - A custom module that allows a GraphQL mutation.
+
+### Notes: 
+
+- We made another repo to host [the talk](https://github.com/EdgarBarrantes/drupal-rest-json-graphql-talk-slides).
+
+### Links
+
+- [Talk](https://dccr19-deck.netlify.com/)
+- [App](https://dccr19-gb.netlify.com/)
